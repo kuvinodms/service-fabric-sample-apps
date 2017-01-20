@@ -1,0 +1,19 @@
+    <ServiceManifest Name="web-tier" Version="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Description> A simple hello world front end</Description>
+        <ServiceTypes>
+            <StatelessServiceType ServiceTypeName="FrontendService"  UseImplicitHost="true"/>
+        </ServiceTypes>
+        <CodePackage Name="web-tier.Code" Version="1.0">
+            <EntryPoint>
+            <ContainerHost>
+                <ImageName>biprasad2-microsoft.azurecr.io/simple-iis-app:latest</ImageName>
+                <Commands></Commands>
+            </ContainerHost>
+            </EntryPoint>
+        </CodePackage>
+        <Resources>
+            <Endpoints>
+                <Endpoint Name="Endpoint1" UriScheme="http" Port="8080" Protocol="http"/>
+            </Endpoints>
+        </Resources>
+    </ServiceManifest>

@@ -1,0 +1,23 @@
+    <ApplicationManifest ApplicationTypeName="asp-net-blog-app" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Description>ASP NET Blog application</Description>
+        <ServiceManifestImport>
+            <ServiceManifestRef ServiceManifestName="web-tier" ServiceManifestVersion="1.0"/>
+            <Policies>
+                <ResourceGovernancePolicy CodePackageRef="web-tier.Code" CpuShares="500" MemoryInMB="1024" MemorySwapInMB="4084" MemoryReservationInMB="1024" />
+                <ContainerHostPolicies CodePackageRef="web-tier.Code">
+                    <RepositoryCredentials AccountName="biprasad2" Password="smJ5/aMDTG+mdIBppS6ZV9PfbLoBBG6N" PasswordEncrypted="false"/>
+                    <PortBinding ContainerPort="80" EndpointRef="Endpoint1"/>
+                </ContainerHostPolicies>
+            </Policies>
+        </ServiceManifestImport>
+        <ServiceManifestImport>
+            <ServiceManifestRef ServiceManifestName="db-tier" ServiceManifestVersion="1.0"/>
+            <Policies>
+                <ResourceGovernancePolicy CodePackageRef="db-tier.Code" CpuShares="500" MemoryInMB="1024" MemorySwapInMB="4084" MemoryReservationInMB="1024" />
+                <ContainerHostPolicies CodePackageRef="db-tier.Code">
+                    <RepositoryCredentials AccountName="biprasad2" Password="smJ5/aMDTG+mdIBppS6ZV9PfbLoBBG6N" PasswordEncrypted="false"/>
+                    <PortBinding ContainerPort="1433" EndpointRef="Endpoint2"/>
+                </ContainerHostPolicies>
+            </Policies>
+        </ServiceManifestImport>
+    </ApplicationManifest>

@@ -1,0 +1,19 @@
+    <ServiceManifest Name="db-tier" Version="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Description> A service that implements a db in a container</Description>
+        <ServiceTypes>
+            <StatelessServiceType ServiceTypeName="BackendService"  UseImplicitHost="true"/>
+        </ServiceTypes>
+        <CodePackage Name="db-tier.Code" Version="1.0">
+            <EntryPoint>
+            <ContainerHost>
+                <ImageName>biprasad2-microsoft.azurecr.io/aspnetblogapplication_db:latest</ImageName>
+                <Commands></Commands>
+            </ContainerHost>
+            </EntryPoint>
+        </CodePackage>
+        <Resources>
+            <Endpoints>
+                <Endpoint Name="Endpoint2" UriScheme="http" Port="1433" Protocol="http"/>
+            </Endpoints>
+        </Resources>
+    </ServiceManifest>

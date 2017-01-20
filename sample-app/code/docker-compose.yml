@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+    service-a:
+        image: sample-app_service-a:v2
+        environment:
+            - APPINSIGHTS_INSTRUMENTATIONKEY
+        ports:
+            - "8090:80"
+        depends_on:
+            - mycache
+            - service-b
+        labels:
+            com.microsoft.acs.dcos.marathon.healthcheck.path: "/"
+
+    mycache:
+        image: sample_app-redis:latest
+        ports:
+            - "6379:6379"
+        labels:
+            com.microsoft.acs.dcos.marathon.healthcheck: "true"
