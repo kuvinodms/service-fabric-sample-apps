@@ -7,6 +7,7 @@
   <Parameters>
     <Parameter Name="service-a_InstanceCount" DefaultValue="-1" />
     <Parameter Name="redis_InstanceCount" DefaultValue="1" />
+    <Parameter Name="redis_url" DefaultValue="localhost" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
@@ -14,6 +15,9 @@
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="service-a" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="service-a.Code">
+      <EnvironmentVariable Name="redisServiceUrl" Value="[redis_url]"/>
+    </EnvironmentOverrides>
     <Policies>
       <ResourceGovernancePolicy CodePackageRef="service-a.Code" CpuShares="500" MemoryInMB="1024" MemorySwapInMB="4084" MemoryReservationInMB="1024" />
       <ContainerHostPolicies CodePackageRef="service-a.Code">

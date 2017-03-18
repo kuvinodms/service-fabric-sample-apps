@@ -15,15 +15,13 @@
     <EntryPoint>
       <!-- Follow this link for more information about deploying Windows containers to Service Fabric: https://aka.ms/sfguestcontainers -->
       <ContainerHost>
-        <ImageName>biprasad2-microsoft.azurecr.io/sample-app_service-a_sf:v2</ImageName>
+        <ImageName>biprasad2-microsoft.azurecr.io/sample-app_service-a_sf:v3</ImageName>
       </ContainerHost>
     </EntryPoint>
     <!-- Pass environment variables to your container: -->
-    <!--
     <EnvironmentVariables>
-      <EnvironmentVariable Name="VariableName" Value="VariableValue"/>
+      <EnvironmentVariable Name="redisServiceUrl" Value=""/>
     </EnvironmentVariables>
-    -->
   </CodePackage>
 
   <!-- Config package is the contents of the Config directoy under PackageRoot that contains an 
