@@ -8,7 +8,9 @@ if (process.env.APPINSIGHTS_INSTRUMENTATIONKEY) {
     };
 }
 var express = require('express');
-var redis = require('redis').createClient("redis://bishal-sf5.westus.cloudapp.azure.com");
+var redisUrl = "redis://" + process.env.redisServiceUrl;
+
+var redis = require('redis').createClient(redisUrl);
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
