@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest ApplicationTypeName="sampleAppType"
-                     ApplicationTypeVersion="1.0.0"
+                     ApplicationTypeVersion="1.0.1"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
                      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -13,7 +13,7 @@
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="service-a" ServiceManifestVersion="1.0.0" />
+    <ServiceManifestRef ServiceManifestName="service-a" ServiceManifestVersion="1.0.1" />
     <ConfigOverrides />
     <EnvironmentOverrides CodePackageRef="service-a.Code">
       <EnvironmentVariable Name="redisServiceUrl" Value="[redis_url]"/>

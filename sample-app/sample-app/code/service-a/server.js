@@ -30,7 +30,7 @@ app.get('/api', function (req, res) {
 
     // Invoke service-b
     //request('http://service-b', function (error, response, body) {
-        res.send('Hello from service A running on ' + os.hostname());
+        res.send('Hello from service A\' running on ' + os.hostname());
     //});
 });
 
