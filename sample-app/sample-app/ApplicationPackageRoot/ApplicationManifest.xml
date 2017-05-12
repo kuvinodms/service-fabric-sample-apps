@@ -27,7 +27,7 @@
     </Policies>
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="redis" ServiceManifestVersion="1.0.0" />
+    <ServiceManifestRef ServiceManifestName="redis" ServiceManifestVersion="1.0.1" />
     <ConfigOverrides />
     <Policies>
       <ContainerHostPolicies CodePackageRef="redis.Code">
