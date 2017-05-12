@@ -15,7 +15,7 @@
     <EntryPoint>
       <!-- Follow this link for more information about deploying Windows containers to Service Fabric: https://aka.ms/sfguestcontainers -->
       <ContainerHost>
-        <ImageName>stefanscherer/node-windows:6.9.4</ImageName>
+        <ImageName>biprasad2-microsoft.azurecr.io/sample-app_redis_sf:v3</ImageName>
       </ContainerHost>
     </EntryPoint>
     <!-- Pass environment variables to your container: -->
