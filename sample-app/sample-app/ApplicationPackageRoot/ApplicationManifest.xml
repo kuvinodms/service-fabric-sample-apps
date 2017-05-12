@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest ApplicationTypeName="sampleAppType"
-                     ApplicationTypeVersion="1.0.1"
+                     ApplicationTypeVersion="1.0.2"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
                      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -13,7 +13,7 @@
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="service-a" ServiceManifestVersion="1.0.1" />
+    <ServiceManifestRef ServiceManifestName="service-a" ServiceManifestVersion="1.0.2" />
     <ConfigOverrides />
     <EnvironmentOverrides CodePackageRef="service-a.Code">
       <EnvironmentVariable Name="redisServiceUrl" Value="[redis_url]"/>
@@ -21,7 +21,7 @@
     <Policies>
       <ResourceGovernancePolicy CodePackageRef="service-a.Code" CpuShares="500" MemoryInMB="1024" MemorySwapInMB="4084" MemoryReservationInMB="1024" />
       <ContainerHostPolicies CodePackageRef="service-a.Code">
-        <RepositoryCredentials AccountName="biprasad2" Password="smJ5/aMDTG+mdIBppS6ZV9PfbLoBBG6N" PasswordEncrypted="false"/>
+        <!--RepositoryCredentials AccountName="biprasad2" Password="smJ5/aMDTG+mdIBppS6ZV9PfbLoBBG6N" PasswordEncrypted="false"/-->
         <PortBinding ContainerPort="80" EndpointRef="service-a-endpoint"/>
       </ContainerHostPolicies>
     </Policies>
